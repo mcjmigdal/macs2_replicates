@@ -9,3 +9,4 @@ Calling peaks with macs2 and combining infromation from replicates using Fisher 
 
 # Usage
 samples should be named SAMPLE_REPLICATE.bam
+snakemake -s macs2_replicates_atacseq.snakefile sample.narrowPeak
