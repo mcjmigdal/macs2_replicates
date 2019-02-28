@@ -3,6 +3,7 @@ SAMPLES = ["kdrl", "fabp", "hand"]
 REPLICATES = ["1", "2", "3"]
 
 # params
+max_fragment_length = 128
 gsize = 1.37e9
 keepduplicates = "auto"
 atac_tag_extsize = 50 # both sides
@@ -14,9 +15,20 @@ cutoff = 5 # -log10(1e-5)
 minlen = 100 # minimum length of peak
 maxgap = 75 # maximum gap between significant points *in a peak*
 
-rule filter_duplicates:
+rule filter_shift_bam:
     input:
         "{sample}_{replicate}.bam"
+    output:
+        "{sample}_{replicate}.shifted.bam"
+    params:
+        th = max_fragment_length
+    shell:
+      "alignmentSieve -b {input} -o {output} --ATACshift --maxFragmentLength {params.th}"
+  
+
+rule filter_duplicates:
+    input:
+        "{sample}_{replicate}.shifted.bam"
     output:
         out = "{sample}_{replicate}.filterdup.bed",
         log = "{sample}_{replicate}.log"
