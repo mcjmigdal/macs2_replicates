@@ -1,5 +1,5 @@
 # input
-SAMPLES = ["kdrl", "fabp", "hand"]
+SAMPLES = ["fabp"]
 REPLICATES = ["1", "2", "3"]
 
 # params
