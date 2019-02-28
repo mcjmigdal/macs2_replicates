@@ -6,3 +6,6 @@ Calling peaks with macs2 and combining infromation from replicates using Fisher 
 + python2.7
 + macs2
 + deepTools
+
+# Usage
+samples should be named SAMPLE_REPLICATE.bam
