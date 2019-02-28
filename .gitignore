@@ -1,0 +1,7 @@
+bin/
+fabp_1_pos_R1.fastq.bam.fastq.sorted.filtered.bam
+fabp_2_pos_R1.fastq.bam.fastq.sorted.filtered.bam
+fabp_3_pos_R1.fastq.bam.fastq.sorted.filtered.bam
+include/
+lib/
+local/
