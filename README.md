@@ -1,13 +1,29 @@
 # macs2_replicates
 Calling peaks with macs2 and combining infromation from replicates using Fisher method
 
-# ATAC-seq dependencies
+Macs2 is the most popular tool for peak calling. While it offers support for combining
+information from two replicates, it doesnt allow to combine more than two replicates.
+Script in this repository allows this by first producing per bp p-values track in 
+bedGraph format using Macs2 scripts and than combining them togheter by means of [Fisher method](https://en.wikipedia.org/wiki/Fisher%27s_method)
+using script writen in R. This togheter creates easly understandable pipline for calling
+peaks using multiple replicates.
+
+# Dependecies
 + python3.6
 + python2.7
 + macs2
-+ deepTools
++ snakemake
++ deepTools [optional for ATAC-seq pipeline]
 
 # Usage
-samples should be named SAMPLE_REPLICATE.bam
+Each pipeline is created using snakemake. To customize it for ones analysis one should
+open appropiate `.snakefile` with text editor. At the top of each snakefile are the 
+parameters that can be customize. Especially one should edit #input section to reflect
+input files that are going to be processed. Samples should be named like `SAMPLE_REPLICATE.bam`
 
-snakemake -s macs2_replicates_atacseq.snakefile sample.narrowPeak
+once the snakefile is edited to your likening the pipeline can be run by issuing following 
+command:
+
+`snakemake -s macs2_replicates_atacseq.snakefile sample.narrowPeak`
+
+Check example_chip_seq for more detailed explanation
