@@ -10,7 +10,7 @@ args <- commandArgs(TRUE)
 out <- args[1] # Output file name
 input <- args[-1] # Input bedgraphs
 
-stopifnot(length(input) > 2)
+stopifnot(length(input) => 2)
 
 # constants
 e <- exp(1)
