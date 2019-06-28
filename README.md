@@ -8,6 +8,8 @@ bedGraph format using Macs2 scripts and than combining them togheter by means of
 using script writen in R. This togheter creates easly understandable pipline for calling
 peaks using multiple replicates.
 
+![example IGV snapshot](example_igv.png)
+
 # Dependecies
 + python3.6
 + python2.7
@@ -29,3 +31,7 @@ command:
 !!!Note: combine_pvalues.R must be in the same directory as snakefile
 
 Check example_chip_seq for more detailed explanation
+
+# All comments and suggestions are more than welcome!
+
+This work was inspierd by [Genrich](https://github.com/jsh58/Genrich) and [Macs2](https://github.com/taoliu/MACS)
