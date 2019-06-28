@@ -26,4 +26,6 @@ command:
 
 `snakemake -s macs2_replicates_atacseq.snakefile sample.narrowPeak`
 
+!!!Note: combine_pvalues.R must be in the same directory as snakefile
+
 Check example_chip_seq for more detailed explanation
