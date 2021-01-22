@@ -1,8 +1,9 @@
 # macs2_replicates
 Calling peaks with macs2 and combining infromation from replicates using Fisher method
 
-Macs2 is the most popular tool for peak calling. While it offers support for combining
-information from two replicates, it doesnt allow to combine more than two replicates.
+Macs2 is the most popular tool for peak calling. ~While it offers support for combining
+information from two replicates, it doesnt allow to combine more than two replicates.~
+**actually Macs2 does support combining more than two replicates, pipeline in this repository will be updated to reflect this as Macs2 implementation is way faster**
 Script in this repository allows this by first producing per bp p-values track in 
 bedGraph format using Macs2 scripts and than combining them togheter by means of [Fisher method](https://en.wikipedia.org/wiki/Fisher%27s_method)
 using script writen in R. This togheter creates easly understandable pipline for calling
